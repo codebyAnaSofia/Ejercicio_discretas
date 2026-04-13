@@ -21,5 +21,39 @@ public class ListaEnlazada<T>{
             }
             actual.setSiguiente(nuevo);
         }
+        tamano ++;
+    }
+    //2 Obtener por indice
+    public T obtener(int index){
+        if(index < 0 || index >= tamano){
+            return null;
+        }
+        Nodo<T> actual = cabeza;
+        int contador = 0;
+        while(contador < index){
+            actual = actual.getSiguiente();
+            contador ++;
+        }
+        return actual.getDato();
+
+    }
+    // buscar por dato
+    public T buscar(T dato){
+        Nodo<T> actual = cabeza;
+
+        while (actual != null){
+            if (actual.getDato().equals(dato)){
+                return actual.getDato();
+            }
+            actual = actual.getSiguiente();
+        }
+        return null;// no encontrado
+    }
+    //  eliminar y retonar elemento
+    public T eliminar(T dato){
+        if (cabeza == null){
+            return null;
+
+        }
     }
 }
