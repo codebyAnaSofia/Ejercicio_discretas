@@ -55,5 +55,27 @@ public class ListaEnlazada<T>{
             return null;
 
         }
+        // eliminar el primero
+        if (cabeza.getDato().equals(dato)){
+            T eliminado = cabeza.getDato();
+            cabeza = cabeza.getSiguiente();
+            tamano--;
+            return eliminado;
+        }
+        Nodo<T> actual = cabeza;
+        while (actual.getSiguiente() != null ){
+            if (actual.getSiguiente().getDato().equals(dato)){
+                T eliminado = actual.getSiguiente().getDato();
+                actual.setSiguiente(actual.getSiguiente().getSiguiente());
+                tamano--;
+                return eliminado;
+            }
+            actual = actual.getSiguiente();
+        }
+        return null;// no encontrado
+    }
+    // tamano de la lista
+    public int size(){
+        return tamano;
     }
 }
