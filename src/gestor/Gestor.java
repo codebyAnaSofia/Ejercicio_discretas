@@ -30,5 +30,8 @@ public class Gestor<T>{
     public int size(){
         return lista.size();
     }
+    public void mostrar() {
+        lista.mostrar();
+    }
 }
 

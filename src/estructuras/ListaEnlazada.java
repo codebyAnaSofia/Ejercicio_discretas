@@ -49,6 +49,13 @@ public class ListaEnlazada<T>{
         }
         return null;// no encontrado
     }
+    public void mostrar() {
+        Nodo<T> actual = cabeza;
+        while (actual != null) {
+            System.out.println(actual.getDato());
+            actual = actual.getSiguiente();
+        }
+    }
     //  eliminar y retonar elemento
     public T eliminar(T dato){
         if (cabeza == null){

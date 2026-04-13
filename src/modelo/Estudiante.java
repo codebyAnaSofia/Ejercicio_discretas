@@ -51,13 +51,14 @@ public class Estudiante {
         Estudiante otro = (Estudiante) obj;
         return this.codigo.equals(otro.codigo);
     }
+    public void setCarrera(String carrera) {
+        this.carrera = carrera;
+    }
 
     @Override
     public String toString() {
         return "Estudiante:codigo " + codigo + ", nombre " + nombre + " " + apellido + ", carrera=" + carrera;
     }
 }
-    public void setCarrera(String carrera) {
-        this.carrera = carrera;
-    }
+
 
